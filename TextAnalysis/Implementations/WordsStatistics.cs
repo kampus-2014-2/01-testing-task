@@ -10,6 +10,7 @@ namespace HtmlAnalysis.Implementations
 
 		public override void AddWord(string word)
 		{
+			if (string.IsNullOrEmpty(word)) return;
 			int count;
 			stats[word.ToLower()] = stats.TryGetValue(word.ToLower(), out count) ? count + 1 : 1;
 		}
